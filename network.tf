@@ -1,4 +1,4 @@
-imodule "vpc" {
+module "vpc" {
   source                                 = "terraform-google-modules/network/google//modules/vpc"
   project_id                             = "terraform-ignite"
   network_name                           = "terraform-ignite"

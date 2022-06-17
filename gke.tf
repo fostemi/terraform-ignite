@@ -43,7 +43,7 @@ module "gke" {
       enable_gcfs               = false
       auto_repair               = true
       auto_upgrade              = true
-      service_account           = "project-service-account@terraform-ignite.iam.gserviceaccount.com"
+      service_account           = "terraform-expert@terraform-ignite.iam.gserviceaccount.com"
       preemptible               = false
       initial_node_count        = 80
     },

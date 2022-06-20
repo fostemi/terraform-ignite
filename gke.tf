@@ -5,16 +5,16 @@ module "gke" {
   use_gke    = var.use_gke
   use_anthos = var.use_anthos
 
-  regional           = false
-  network_project_id = "terraform-ignite"
-  gke_project_id     = "terraform-ignite"
-  gke_node_sa        = "terraform-expert@terraform-ignite.iam.gserviceaccount.com"
+  regional           = true
+  network_project_id = var.gcp_project_id
+  gke_project_id     = var.gcp_project_id
+  gke_node_sa        = var.service_account
 
-  cluster_name        = "cluster1"
-  network_name        = "terraform-test"
-  subnet_name         = "subnet1"
-  region              = "us-central1"
-  zones               = "us-central1-c"
+  cluster_name        = local.cluster_name
+  network_name        = var.network_name
+  subnet_name         = local.subnet_name
+  region              = local.region
+  zones               = local.zones
   pods_range_name     = local.pods_range_name
   services_range_name = local.services_range_name
   master_range        = local.master_range

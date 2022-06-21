@@ -68,6 +68,11 @@ variable "use_bastion" {
   default     = false
 }
 
+variable "use_tf" {
+  description = "Whether TF should be used for app resources"
+  type        = bool
+  default     = true
+}
 
 variable "use_anthos" {
   description = "Whether clusters should install Anthos services"

@@ -1,0 +1,3 @@
+containerPort: 8000
+projectID: terraform-ignite
+imageTag: latest

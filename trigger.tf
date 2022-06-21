@@ -7,8 +7,9 @@ resource "google_cloudbuild_trigger" "cloudbuild_triggers" {
 	disabled = !var.use_gke
 	
 	github {
-		owner	= var.github_org
-		name	= var.repo_name
+		repo_type	= "GITHUB"
+		owner		= var.github_org
+		name		= var.repo_name
 	
 		push {
 			branch	= "main"

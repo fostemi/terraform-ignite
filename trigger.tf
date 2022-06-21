@@ -1,5 +1,5 @@
 resource "google_cloudbuild_trigger" "cloudbuild_triggers" {
-	for_each = var.user_tf ? toset(var.app_names) : toset([])
+	for_each = var.use_tf ? toset(var.app_names) : toset([])
 
 	project	= var.gcp_project_id
 	name	= "${each.key}-ci"

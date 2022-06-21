@@ -120,10 +120,7 @@ variable "app_names" {
   description = "List of app names"
   type        = list(string)
   default = [
-    "react",
-    "django",
-    "wiki",
-    "status",
+    "angular-tour-of-heroes",
   ]
 }
 

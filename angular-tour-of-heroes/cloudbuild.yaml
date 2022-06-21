@@ -6,22 +6,22 @@ steps:
       - --destination=gcr.io/$PROJECT_ID/angular:latest
       - --context=./angular-tour-of-heroes
 
-#  - name: "gcr.io/cloud-builders/gcloud-slim"
-#    id: Gcloud-Auth
-#    entrypoint: "bash"
-#    args:
-#      - "-c"
-#      - |
-#        gcloud container clusters get-credentials ${_CLUSTER} --zone=${_ZONE}
-#  - name: "gcr.io/walker-cpl/helm"
-#    id: Helm-Upgrade
-#    entrypoint: "bash"
-#    args:
-#      - "-c"
-#      - |
-#        helm upgrade -i ${_APP_NAME} ./charts/app -n ${_APP_NAME} --create-namespace --set google.domain=${_DOMAIN} --set google.project=$PROJECT_ID --set image.tag=$COMMIT_SHA
-#    env:
-#      - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
-#      - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}"
-#
-#timeout: 1200s
+  - name: "gcr.io/cloud-builders/gcloud-slim"
+    id: Gcloud-Auth
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        gcloud container clusters get-credentials ${_CLUSTER} --zone=${_ZONE} --project=$PROJECT_ID
+  - name: "gcr.io/walker-cpl/helm"
+    id: Helm-Upgrade
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        helm upgrade -i ${_APP_NAME} ./charts/app -n ${_APP_NAME} --create-namespace --set google.domain=${_DOMAIN} --set google.project=$PROJECT_ID --set image.tag=$COMMIT_SHA
+    env:
+      - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
+      - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}"
+
+timeout: 1200s

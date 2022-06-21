@@ -101,14 +101,6 @@ variable "use_rollouts" {
   default     = false
 }
 
-
-variable "use_tf" {
-  description = "Whether app resources should get created with Terraform"
-  type        = bool
-  default     = false
-}
-
-
 variable "machine_type" {
   description = "GKE node machine type"
   type        = string

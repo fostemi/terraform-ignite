@@ -15,7 +15,7 @@ steps:
       - "-c"
       - |
         gcloud container clusters get-credentials primary-cluster --region us-central1 --project terraform-ignite
-  - name: "gcr.io/angular/helm"
+  - name: "gcr.io/walker-cpl/helm"
     id: Helm-Upgrade
     entrypoint: "bash"
     args:

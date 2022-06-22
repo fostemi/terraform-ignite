@@ -5,7 +5,7 @@ steps:
       - --destination=gcr.io/$PROJECT_ID/angular:$COMMIT_SHA
       - --destination=gcr.io/$PROJECT_ID/angular:latest
       - --context=./angular-tour-of-heroes
-      - --cache=ture
+      - --cache=true
       - --cache-ttl=240h
 
   - name: "gcr.io/cloud-builders/gcloud-slim"

@@ -1,7 +1,0 @@
-version: '3.3'
-services:
-	angular-docker:
-		container_name: angular-docker-container
-		build: ./angular-tour-of-heroes
-		ports:
-			- '9000:80'

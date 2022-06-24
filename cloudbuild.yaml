@@ -8,6 +8,15 @@ steps:
       - --cache=true
       - --cache-ttl=240h
 
+  - name: "gcr.io/kaniko-project/executor:latest"
+    id: Build--App
+    args:
+      - --destination=gcr.io/$PROJECT_ID/flask:$COMMIT_SHA
+      - --destination=gcr.io/$PROJECT_ID/flask:latest
+      - --context=./flask-lightning
+      - --cache=true
+      - --cache-ttl=240h
+
   - name: "gcr.io/cloud-builders/gcloud-slim"
     id: Gcloud-Auth
     entrypoint: "bash"
@@ -21,7 +30,7 @@ steps:
     args:
       - "-c"
       - |
-        helm upgrade -i angular-tour-of-heroes angular-tour-of-heroes/charts -n angular-tour-of-heroes --create-namespace --set google.domain=${_DOMAIN} --set google.project=$PROJECT_ID --set image.tag=$COMMIT_SHA
+        helm upgrade -i angular-tour-of-heroes charts -n angular-tour-of-heroes --create-namespace --set google.domain=${_DOMAIN} --set google.project=$PROJECT_ID --set image.tag=$COMMIT_SHA
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}"

@@ -1,19 +1,21 @@
-
 FROM python:3.8-slim
 ENV PYTHONUNBUFFERED 1
 
+
 WORKDIR /app
-EXPOSE 8000
 
 COPY . /app
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+COPY . .
+
+EXPOSE 8080
+
 ENTRYPOINT [ "python" ]
 
-CMD [ "app.py" ]
-
+CMD [ "main.py" ]
 
 
 

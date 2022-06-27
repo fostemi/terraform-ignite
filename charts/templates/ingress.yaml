@@ -16,15 +16,17 @@ spec:
             name: frontend-service
             port:
               number: 80
-       - path: /api/*
-         pathType: ImplementationSpecific
-         backend:
-           service:
-             name: backend-service
-             port:
-               number: 80
-       - path: /lightning
-         pathType: ImplementationSpecific
-         backend:
-           service:
-             name: flask-service
+      - path: /api/*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: backend-service
+            port:
+              number: 80
+      - path: /lightning
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: flask-service
+            port:
+              number: 80

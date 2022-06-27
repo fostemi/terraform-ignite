@@ -6,8 +6,23 @@ metadata:
     networking.gke.io/managed-certificates: google-cert
     networking.gke.io/frontend-config: gke-frontendconfig
 spec:
-  defaultBackend:
-    service:
-      name: frontend
-      port:
-        number: 443
+  rules:
+  - http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: frontend-service
+       - path: /api/*
+         pathType: ImplementationSpecific
+         backend:
+           service:
+             name: backend-service
+             port:
+               number: 80
+       - path: /lightning
+         pathType: ImplementationSpecific
+         backend:
+           service:
+             name: flask-service

@@ -31,7 +31,6 @@ steps:
       - "-c"
       - |
         helm upgrade -i angular-tour-of-heroes charts -n angular-tour-of-heroes --create-namespace --set google.domain=${_DOMAIN} --set google.project=$PROJECT_ID --set image.tag=$COMMIT_SHA
-        helm upgrade -i flask-lightning -n flask-lightning --create-namespace --set google.domain=${_DOMAIN} --set google.project=$PROJECT_ID --set image.tag=$COMMIT_SHA
     env:
       - "CLOUDSDK_COMPUTE_ZONE=${_ZONE}"
       - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER}"

@@ -1,2 +1,11 @@
 env/
 serviceaccount.tf
+
+**/.DS_Store
+**/*.swp
+**/.vscode
+**/.idea
+**/node_modules
+**/env
+**/venv
+

@@ -11,13 +11,13 @@ spec:
       name: angular
       port:
         number: 443
-  rules:
-  - http:
-      paths:
-      - path: /lightning
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: flask
-            port:
-              number: 443
+#  rules:
+#  - http:
+#      paths:
+#      - path: /lightning
+#        pathType: ImplementationSpecific
+#        backend:
+#          service:
+#            name: flask
+#            port:
+#              number: 443

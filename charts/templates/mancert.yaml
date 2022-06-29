@@ -4,4 +4,4 @@ metadata:
   name: google-cert
 spec:
   domains:
-    - michael.igniteme.dev
+    - {{ required "domain required" .Values.domain }}

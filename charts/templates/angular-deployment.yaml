@@ -18,4 +18,4 @@ spec:
       - name: angular
         image: gcr.io/{{ .Values.projectID }}/angular:{{ .Values.imageTag }}
         ports:
-        - containerPort: {{ .Values.containerPort }}
+        - containerPort: {{ .Values.angular.containerPort }}

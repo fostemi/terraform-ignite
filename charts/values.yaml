@@ -1,6 +1,6 @@
 projectID: terraform-ignite
 imageTag: latest
-domain: michael.igniteme.dev
+domain: mike.igniteme.dev
 
 angular:
   containerPort: 80

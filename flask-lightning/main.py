@@ -4,7 +4,6 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
 @app.route('/')
 def root():
     dummy_times = [datetime.datetime(2018, 1, 1, 10, 0, 0),
@@ -16,4 +15,4 @@ def root():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080, debug=True)
+    app.run(host='0.0.0.0', debug=True)

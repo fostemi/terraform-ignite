@@ -4,7 +4,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/lightning')
 def root():
     dummy_times = [datetime.datetime(2018, 1, 1, 10, 0, 0),
                    datetime.datetime(2018, 1, 2, 10, 30, 0),
